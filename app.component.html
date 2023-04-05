@@ -1,0 +1,20 @@
+<nav class="navbar navbar-light" style="background-color: #77bb6c;">
+  <div class="container-fluid">
+    <a title="Home" class="navbar-brand" routerLink="home"  style="font-weight: bold; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: rgb(71, 12, 12);">
+      <img src="https://cdn-icons-png.flaticon.com/512/2761/2761101.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+      Bill  Management
+    </a>
+
+    <ul class="nav justify-content-end">
+      <li title="Our Client" class="nav-item"><a class="nav-link" routerLink="client"><img src="https://cdn-icons-png.flaticon.com/512/5455/5455723.png" alt="" width="24" height="24"> Client</a></li>
+      <li title="Our Project" class="nav-item"><a class="nav-link" routerLink="project"><img src="https://cdn-icons-png.flaticon.com/512/1163/1163412.png" alt="" width="24" height="24"> Project</a></li>
+      <li title="Bill Management" class="nav-item"><a class="nav-link" routerLink="bill"><img src="https://cdn-icons-png.flaticon.com/512/1651/1651965.png" alt="" width="24" height="24"> Bill Generate</a></li>
+      <li title="Invoice List" class="nav-item"><a class="nav-link" routerLink="invoice"><img src="https://cdn-icons-png.flaticon.com/512/3110/3110340.png" alt="" width="24" height="24"> Invoice</a></li>
+      <li title="Invoice List" class="nav-item"><a class="nav-link" routerLink="payment"><img src="https://cdn-icons-png.flaticon.com/512/2543/2543190.png" alt="" width="24" height="24"> Payment</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

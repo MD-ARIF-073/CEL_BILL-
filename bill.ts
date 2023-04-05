@@ -1,0 +1,20 @@
+export interface Bill{
+    billID:number;
+    billNo:string;
+    clientNo:string;
+    projectNo:string;
+    billDate:string;
+    projectQuantity:number;
+    currency:string;
+    termsOfDelivery:string;
+    deliveryDate:string;
+    deliveryTo:string;
+    invoiceTo:string;
+    termsOfPayment:string;
+    netAmount:Float32Array;
+    vat:number;
+    vatAmount:Float32Array;
+    intotalAmount:Float32Array;
+    description:string;
+    status:string;
+}

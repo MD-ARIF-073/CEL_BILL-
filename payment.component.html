@@ -1,0 +1,38 @@
+<div class="frame">
+    <button type="button" class="custom-btn btn-16" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        payment
+    </button>
+</div>
+
+<div class="container">   
+    <table class="table table-hover table-borderless">
+        <thead class="table-light">
+          <tr>
+            <th scope="col">Payment ID</th>
+            <th scope="col">Payment No</th>
+            <th scope="col">Bill No</th>
+            <th scope="col">Total Amount</th>
+            <th scope="col">Payment Amount</th>
+            <th scope="col">Due Amount</th>
+            <th scope="col">Due Date</th>
+            <th scope="col">Option</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let payment of paymentList">
+            <td>{{payment.paymentID}}</td>
+            <td>{{payment.paymentNo}}</td>
+            <td>{{payment.billNo}}</td>
+            <td>{{payment.intotalAmount}}</td>
+            <td>{{payment.payAmount}}</td>
+            <td>{{payment.dueAmount}}</td>
+            <td>{{payment.dueDate}}</td>
+            <td>
+                <div class="btn-group" role="group" aria-label="Basic outlined example">
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/3143/3143460.png" alt="" width="24" height="24"></a>
+                </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>

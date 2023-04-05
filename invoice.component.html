@@ -1,0 +1,44 @@
+<div class="frame">
+    <button type="button" class="custom-btn btn-16" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><img src="https://cdn-icons-png.flaticon.com/512/3143/3143460.png" alt="" width="22" height="22"> Download</button>
+</div>
+
+<div class="container">   
+    <table class="table table-hover table-borderless">
+        <thead class="table-light">
+          <tr>
+            <th scope="col">Invoice ID</th>
+            <th scope="col">Invoice No</th>
+            <th scope="col">Invoice Date</th>
+            <th scope="col">client No</th>
+            <th scope="col">project No</th>
+            <th scope="col">Bill No</th>
+            <th scope="col">Net Amount</th>
+            <th scope="col">Vat</th>
+            <th scope="col">Vat Amount</th>
+            <th scope="col">Total Amount</th>
+            <th scope="col">Description</th>
+            <th scope="col">Option</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let invoice of invoiceList">
+            <td>{{invoice.invoiceID}}</td>
+            <td>{{invoice.invoiceNo}}</td>
+            <td>{{invoice.invoiceDate}}</td>
+            <td>{{invoice.clientNo}}</td>
+            <td>{{invoice.projectNo}}</td>
+            <td>{{invoice.billNo}}</td>
+            <td>{{invoice.netAmount}}</td>
+            <td>{{invoice.vat}}</td>
+            <td>{{invoice.vatAmount}}</td>
+            <td>{{invoice.inTotalAmount}}</td>
+            <td>{{invoice.description}}</td>
+            <td>
+                <div class="btn-group" role="group" aria-label="Basic outlined example">
+                    <a (click)="downloadInvoice(invoice.invoiceID)"><img src="https://cdn-icons-png.flaticon.com/512/3143/3143460.png" alt="" width="24" height="24"></a>
+                </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </div> 

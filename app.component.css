@@ -1,0 +1,10 @@
+.justify-content-end a{
+    font-weight: bold;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(71, 12, 12);
+    font-size: 18px;
+}
+
+.justify-content-end a:hover{
+    color: rgb(26, 96, 202);
+}

@@ -1,0 +1,21 @@
+<div class="container">
+    <form >
+        <div class="mb-3">
+            <label for="projectNo" class="form-label">Project No:</label>
+            <input type="text" class="form-control" placeholder="Enter Project No" disabled="true" name="projectNo" [(ngModel)]="projectNo">
+        </div>
+        <div class="mb-3">
+            <label for="projectName" class="form-label">Project Name:</label>
+            <input type="text" class="form-control" placeholder="Enter Project Name" name="projectName" [(ngModel)]="projectName">
+        </div>
+        <div class="mb-3">
+            <label for="projectDescription" class="form-label">Project Description:</label>
+            <input type="text" class="form-control" placeholder="Enter Project Description" name="projectDescription" [(ngModel)]="projectDescription">
+        </div>
+        <div class="mb-3">
+            <label for="projectCost" class="form-label">Project Cost:</label>
+            <input type="text" class="form-control" placeholder="Enter Project Cost" name="projectCost" [(ngModel)]="projectCost">
+        </div>
+        <button type="button" class="custom-btn btn" (click)="addProject()" *ngIf="projectID==0">Add Project</button>
+    </form>
+</div>
