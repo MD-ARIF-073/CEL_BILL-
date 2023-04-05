@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\CEL_BILL.props" />
+</Project>

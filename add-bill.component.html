@@ -1,0 +1,125 @@
+<div class="container px-4">
+    <form>
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+                <label for="billNo" class="form-label">Bill No:</label>
+                <input type="text" class="form-control" placeholder="Enter Bill No" name="billNo" disabled="true" [(ngModel)]="billNo">
+            </div>
+            <div class="col-auto">
+                <label for="billDate" class="form-label">Bill date:</label>
+                <input type="date" class="form-control" placeholder="Enter Bill Date" name="billDate" [(ngModel)]="billDate">
+            </div>
+            <div class="col-auto">
+                <label for="deliveryDate" class="form-label">Delivery Date:</label>
+                <input type="date" class="form-control" placeholder="Enter Delivery Date" name="deliveryDate" [(ngModel)]="deliveryDate">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="clientNo" class="form-label">Client No:</label>
+                <!--<input type="text" class="form-control" placeholder="Enter Client No" name="clientNo" [(ngModel)]="clientNo">-->
+                <select class="form-select" aria-label="Default select example" name="clientNo" [(ngModel)]="clientNo">
+                    <option selected>Chose Client</option>
+                    <option *ngFor="let cn of clientList" [value]="cn.clientNo">{{cn.clientName}}</option>
+                </select>
+            </div>
+            <div class="col">
+                <label for="projectNo" class="form-label">Project No:</label>
+                <!--<input type="text" class="form-control" placeholder="Enter Project No" name="projectNo" [(ngModel)]="projectNo">-->
+                <select class="form-select" aria-label="Default select example" name="projectNo" [(ngModel)]="projectNo">
+                    <option selected>Choose a Project</option>
+                    <option value="1" *ngFor="let pr of projectList" [value]="pr.projectNo" (click)="getprojectCost(pr.projectCost)">{{pr.projectName}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="projectQuantity" class="form-label">Project Quantity:</label>
+                <input type="number" class="form-control" placeholder="Enter Project Quantity" #q name="projectQuantity" [(ngModel)]="projectQuantity">
+            </div>
+            <div class="col">
+                <label for="projectCost" class="form-label">Project Cost:</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="projectCost" name="projectCost" aria-label="Recipient's username" aria-describedby="button-addon2" [(ngModel)]="pCost">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="getNetAmount()">Get</button>
+                </div>
+            </div>
+            <div class="col">
+                <label for="currency" class="form-label">Currency:</label>
+                <input type="text" class="form-control" placeholder="Enter Currency" name="currency" [(ngModel)]="currency">
+            </div>
+            <div class="col">
+                <label for="termsOfDelivery" class="form-label">Terms of Delivery:</label>
+            <input type="text" class="form-control" placeholder="Enter Terms of Delivery" name="termsOfDelivery" [(ngModel)]="termsOfDelivery">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="deliveryTo" class="form-label">Delivery To:</label>
+                <textarea class="form-control" placeholder="Enter Delivery To" name="deliveryTo" rows="3" [(ngModel)]="deliveryTo"></textarea>
+            </div>
+            <div class="col">
+                <label for="invoiceTo" class="form-label">Invoice To:</label>
+                <textarea class="form-control" placeholder="Enter Invoice To" name="invoiceTo" rows="3" [(ngModel)]="invoiceTo"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="termsOfPayment" class="form-label">Terms Of Payment:</label>
+                <input type="text" class="form-control" placeholder="Enter Terms of Payment" name="termsOfPayment" [(ngModel)]="termsOfPayment">
+            </div>
+            <div class="col">
+                <label for="netAmount" class="form-label">Net Amount:</label>
+                <input type="number" class="form-control" placeholder="Enter Net Amount" name="netAmount" [(ngModel)]="netAmount">
+            </div>
+            <div class="col">
+                <label for="vat" class="form-label">Vat (%):</label>
+                <input type="number" class="form-control" placeholder="Enter vat" name="vat" [(ngModel)]="vat">
+            </div>
+            <div class="col">
+                <label for="vatAmount" class="form-label">Vat Amount:</label>
+                <input type="text" class="form-control" placeholder="Enter Vat Amount" name="vatAmount"  disabled="true"  [(ngModel)]="vatAmount">
+            </div>
+            <div class="col">
+                <label for="intotalAmount" class="form-label">Total Amount:</label>
+                <input type="text" class="form-control" placeholder="Total Amount" name="intotalAmount" disabled="true" [(ngModel)]="intotalAmount">
+            </div>
+            <div class="col">
+                <label for="status" class="form-label">Status:</label>
+                <select name="status" class="form-select" aria-label="Default select example" name="status" (change)="selectStatus($event)">
+                    <option>Payment Status</option>
+                    <option value="1">Complete</option>
+                    <option value="2">Not Complete</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="payAmount" class="form-label">Pay Amount:</label>
+                <input type="text" class="form-control" placeholder="Enter PayAmount" name="payAmount"  [(ngModel)]="payAmount">
+            </div>
+            <div class="col">
+                <label for="dueAmount" class="form-label">Due Amount:</label>
+                <input type="text" class="form-control" placeholder="Enter Due Amount" name="dueAmount"  [(ngModel)]="dueAmount">
+            </div>
+            <div class="col">
+                <label for="dueDate" class="form-label">Due Date:</label>
+                <input type="date" class="form-control" placeholder="Due Date" name="dueDate"  [(ngModel)]="dueDate">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="description" class="form-label">Description:</label>
+                <textarea class="form-control" placeholder="Enter Description" name="description" rows="2" [(ngModel)]="description"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="button" class="custom-btn btn" (click)="vatCalculate()">Vat Calculate</button>
+            </div>
+            <div class="col">
+                <button type="button" class="custom-btn btn" (click)="addBill()" *ngIf="billID==0">Add Client</button>
+            </div>
+        </div>
+    </form>
+</div>

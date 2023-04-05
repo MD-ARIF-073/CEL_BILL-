@@ -1,0 +1,57 @@
+<div class="frame">
+    <button type="button" class="custom-btn btn-16" data-bs-toggle="modal" data-bs-target="#staticBackdrop" routerLink="addClient">Add New Client</button>
+</div>
+<div class="container">   
+    <table class="table table-hover table-borderless">
+        <thead class="table-light">
+          <tr>
+            <th scope="col">Client ID</th>
+            <th scope="col">Client No</th>
+            <th scope="col">Client Name</th>
+            <th scope="col">Client Email</th>
+            <th scope="col">Client Phone</th>
+            <th scope="col">Client Address</th>
+            <th scope="col">     Option</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let client of clientList">
+            <td>{{client.clientID}}</td>
+            <td>{{client.clientNo}}</td>
+            <td>{{client.clientName}}</td>
+            <td>{{client.clientEmail}}</td>
+            <td>{{client.clientPhoneNo}}</td>
+            <td>{{client.clientAddress}}</td>
+            <!--<td><a href="#">Edit</a> | <a href="#">Show</a> | <a href="#">Delete</a></td>-->
+            <td>
+                <div class="btn-group" role="group" aria-label="Basic outlined example">
+                    <a title="delete" (click)="deleteClient(client.clientID)"><img src="https://cdn-icons-png.flaticon.com/512/6639/6639375.png" alt="" width="24" height="24"></a>
+                </div>
+            </td>  
+            
+          </tr>
+        </tbody>
+      </table>
+  </div>
+
+  <div class="alert alert-success" role="alert" id="client-success-alart">
+    New Client Successfully Added!
+  </div>
+  <div class="alert alert-success" role="alert" id="client-delete-alart">
+    This Client Successfully Removed!
+  </div>
+
+  <!-- Modal -->
+  <div *ngIf="display" class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Add New Client</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="modalClose()" id="add-client-modal-close"></button>
+        </div>
+        <div class="modal-body">
+            <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>

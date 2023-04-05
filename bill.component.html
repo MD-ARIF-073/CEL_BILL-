@@ -1,0 +1,65 @@
+<div class="frame">
+    <button type="button" class="custom-btn btn-16" data-bs-toggle="modal" data-bs-target="#staticBackdrop" routerLink="addBill">New Bill Generate</button>
+</div>
+
+<div class="container">
+    <table class="table table-hover table-sm">
+        <thead class="table-light">
+            <tr>
+                <th scope="col">Bill No</th>
+                <th scope="col">Client No</th>
+                <th scope="col">Project No</th>
+                <th scope="col">Bill Date</th>
+                <th scope="col">Currency</th>
+                <th scope="col">Delivery Date</th>
+                <th scope="col">Delivery To</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Vat</th>
+                <th scope="col">Vat Amount</th>
+                <th scope="col">Total</th>
+                <th scope="col">status</th>
+                <th>Bill Option</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let bill of billList">
+                <td>{{bill.billNo}}</td>
+                <td>{{bill.clientNo}}</td>
+                <td>{{bill.projectNo}}</td>
+                <td>{{bill.billDate}}</td>
+                <td>{{bill.currency}}</td>
+                <td>{{bill.deliveryDate}}</td>
+                <td>{{bill.deliveryTo}}</td>
+                <td>{{bill.netAmount}}</td>
+                <td>{{bill.vat}}</td>
+                <td>{{bill.vatAmount}}</td>
+                <td>{{bill.intotalAmount}}</td>
+                <td>{{bill.status}}</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic outlined example">
+                        <a (click)="downloadBill(bill.billID)"><img src="https://cdn-icons-png.flaticon.com/512/3143/3143460.png" alt="" width="24" height="24"></a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="alert alert-success" role="alert" id="bill-success-alart">
+    New Bill Successfully Added!
+</div>
+
+
+<div *ngIf="display" class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">New Bill Generate</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="modalClose()" id="add-bill-modal-close"></button>
+        </div>
+        <div class="modal-body">
+            <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>

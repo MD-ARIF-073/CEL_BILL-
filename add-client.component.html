@@ -1,0 +1,46 @@
+<div class="container">
+    <form>
+        <div class="mb-3">
+            <label for="clientNo" class="form-label">Client No:</label>
+            <input type="text" class="form-control" placeholder="Enter Client No" disabled="true" name="clientNo" [(ngModel)]="clientNo">
+        </div>
+        <div class="mb-3">
+            <label for="clientName" class="form-label">Client Name:</label>
+            <input type="text" class="form-control" placeholder="Enter Client No" name="clientName" [(ngModel)]="clientName">
+        </div>
+        <div class="mb-3">
+            <label for="clientEmail" class="form-label">Client Email:</label>
+            <input type="text" class="form-control" placeholder="Enter Client Email" name="clientEmail" [(ngModel)]="clientEmail">
+        </div>
+        <div class="mb-3">
+            <label for="clientPhoneNo" class="form-label">Client Phone No:</label>
+            <input type="text" class="form-control" placeholder="Enter Client PhoneNo" name="clientPhoneNo" [(ngModel)]="clientPhoneNo">
+        </div>
+        <div class="mb-3">
+            <label for="clientAddress" class="form-label">Client Address:</label>
+            <input type="text" class="form-control" placeholder="Enter Client Address" name="clientAddress" [(ngModel)]="clientAddress">
+        </div>
+        <button type="button" class="custom-btn btn" (click)="addClient()" *ngIf="clientID==0">Add Client</button>
+    </form>
+</div>
+
+<!--
+    <form>
+        <label for="clientNo">Company No: </label>
+        <input type="text" id="clientNo" name="clientNo" placeholder="Enter Company Name">
+
+        <label for="clientName">Company Name: </label>
+        <input type="text" id="clientName" name="clientName" placeholder="Enter Company Name">
+        
+        <label for="clientEmail">Company Email: </label>
+        <input type="text" id="clientEmail" name="clientEmail" placeholder="Enter Company Email">
+        
+        <label for="clientPhoneNo">Company Phone: </label>
+        <input type="text" id="clientPhoneNo" name="clientPhoneNo" placeholder="Enter Company Phone">
+
+        <label for="clientAddress">Company Address: </label>
+        <input type="text" id="clientAddress" name="clientAddress" placeholder="Enter Company Address">
+        
+        <button type="button" class="custom-btn btn">Add Company</button>
+    </form>
+-->
